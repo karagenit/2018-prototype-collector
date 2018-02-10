@@ -7,6 +7,8 @@
 
 package org.usfirst.frc.team868.robot;
 
+import org.usfirst.frc.team868.robot.subsystems.Collector;
+
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
@@ -18,6 +20,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
  * project.
  */
 public class Robot extends TimedRobot {
+	
+	public static final Collector collector = new Collector();
 
 	/**
 	 * This function is run when the robot is first started up and should be
@@ -25,6 +29,7 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
+		OI.setupDriver();
 	}
 
 	/**

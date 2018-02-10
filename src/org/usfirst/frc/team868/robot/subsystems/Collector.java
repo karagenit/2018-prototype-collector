@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
+import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.Solenoid;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -15,6 +16,7 @@ public class Collector extends Subsystem {
     private TalonSRX motorLeft = new WPI_TalonSRX(0); // TODO: fix port #s
     private TalonSRX motorRight = new WPI_TalonSRX(1);
     private Solenoid actuator = new Solenoid (0);
+    private AnalogInput rangefinder = new AnalogInput(0);
     
     public Collector() {
     	configDefaults();
@@ -46,6 +48,10 @@ public class Collector extends Subsystem {
     
     public boolean getPosition() {
     	return actuator.get();
+    }
+    
+    public double getRangefinder() {
+    	return rangefinder.getVoltage();
     }
 
     public void initDefaultCommand() {}

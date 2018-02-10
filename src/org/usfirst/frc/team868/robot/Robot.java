@@ -7,10 +7,17 @@
 
 package org.usfirst.frc.team868.robot;
 
+import org.usfirst.frc.team868.robot.commands.LimitPowerCollector;
+import org.usfirst.frc.team868.robot.commands.OscillateCollector;
+import org.usfirst.frc.team868.robot.commands.PeakDisableCollector;
+import org.usfirst.frc.team868.robot.commands.RangefinderTriggerCollector;
+import org.usfirst.frc.team868.robot.commands.SimpleCollector;
+import org.usfirst.frc.team868.robot.commands.ToggleCollectorPosition;
 import org.usfirst.frc.team868.robot.subsystems.Collector;
 
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -29,7 +36,12 @@ public class Robot extends TimedRobot {
 	 */
 	@Override
 	public void robotInit() {
-		OI.setupDriver();
+		SmartDashboard.putData("Toggle Solenoid", new ToggleCollectorPosition());
+		SmartDashboard.putData("Simple Power", new SimpleCollector());
+		SmartDashboard.putData("Close via Rangefinder", new RangefinderTriggerCollector());
+		SmartDashboard.putData("Oscillating Power", new OscillateCollector());
+		SmartDashboard.putData("Disable on Stall", new PeakDisableCollector());
+		SmartDashboard.putData("Limit Current Draw", new LimitPowerCollector());
 	}
 
 	/**

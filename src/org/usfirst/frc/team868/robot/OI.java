@@ -1,6 +1,6 @@
 package org.usfirst.frc.team868.robot;
 
-import org.usfirst.frc.team868.robot.commands.SetCollectorMotors;
+import org.usfirst.frc.team868.robot.commands.SimpleCollector;
 import org.usfirst.frc.team868.robot.commands.ToggleCollectorPosition;
 
 import edu.wpi.first.wpilibj.XboxController;
@@ -16,7 +16,7 @@ public class OI {
 	
 	public static void setupDriver() {
 		JoystickButton aButton = new JoystickButton(driver, 1);
-		aButton.toggleWhenPressed(new SetCollectorMotors(1));
+		aButton.toggleWhenPressed(new SimpleCollector());
 		
 		JoystickButton yButton = new JoystickButton(driver, 2);
 		yButton.whenPressed(new ToggleCollectorPosition());

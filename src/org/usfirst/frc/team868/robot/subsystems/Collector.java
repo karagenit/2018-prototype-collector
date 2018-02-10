@@ -43,6 +43,10 @@ public class Collector extends Subsystem {
     public void setPosition(boolean open) {
     	actuator.set(open); // TODO: may need to invert this
     }
+    
+    public boolean getPosition() {
+    	return actuator.get();
+    }
 
     public void initDefaultCommand() {}
 }

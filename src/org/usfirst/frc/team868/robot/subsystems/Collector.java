@@ -29,6 +29,9 @@ public class Collector extends Subsystem {
     	motorRight.configPeakCurrentLimit(0, 0);
     }
     
+    /**
+     * TODO: read current limit & duration from the dashboard?
+     */
     public void configLimitPower() {
     	configDefaults();
     	motorLeft.configPeakCurrentLimit(20, 0);

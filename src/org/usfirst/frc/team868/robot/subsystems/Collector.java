@@ -42,6 +42,14 @@ public class Collector extends Subsystem {
     	motorRight.set(ControlMode.PercentOutput, right);
     }
     
+    public void setRightMotor(double power) {
+    	motorRight.set(ControlMode.PercentOutput, power);
+    }
+    
+    public void setLeftMotor(double power) {
+    	motorLeft.set(ControlMode.PercentOutput, power);
+    }
+    
     public void setPosition(boolean open) {
     	actuator.set(open); // TODO: may need to invert this
     }
@@ -52,6 +60,14 @@ public class Collector extends Subsystem {
     
     public double getRangefinder() {
     	return rangefinder.getVoltage();
+    }
+    
+    public double getRightCurrent() {
+    	return motorRight.getOutputCurrent();
+    }
+    
+    public double getLeftCurrent() {
+    	return motorLeft.getOutputCurrent();
     }
 
     public void initDefaultCommand() {}

@@ -1,6 +1,9 @@
 package org.usfirst.frc.team868.robot.commands;
 
+import org.usfirst.frc.team868.robot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
@@ -8,29 +11,47 @@ import edu.wpi.first.wpilibj.command.Command;
 public class PeakDisableCollector extends Command {
 
     public PeakDisableCollector() {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
+        requires(Robot.collector);
+        SmartDashboard.putNumber("Collector Power", 1);
+        SmartDashboard.putNumber("Current Maxiumum", 20);
     }
 
-    // Called just before this Command runs the first time
     protected void initialize() {
+    	double power = SmartDashboard.getNumber("Collector Power", 1);
+    	Robot.collector.configDefaults();
+    	Robot.collector.setPosition(true);
+    	Robot.collector.setMotors(power, power);
     }
 
-    // Called repeatedly when this Command is scheduled to run
+    /**
+     * We really should do this checking in a thread, but that would be
+     * quite a bit more difficult (though it would be easier to do at the
+     * subsystem-level, with direct access to the motor controller) - we can
+     * do this in the real code if we feel it's necessary.
+     */
     protected void execute() {
+    	double power = SmartDashboard.getNumber("Collector Power", 1);
+    	double current = SmartDashboard.getNumber("Current Maximum", 20);
+    	
+    	if (Robot.collector.getRightCurrent() > current) {
+    		Robot.collector.setRightMotor(0);
+    	} else {
+    		Robot.collector.setRightMotor(power);
+    	}
+    	
+    	if (Robot.collector.getLeftCurrent() > current) {
+    		Robot.collector.setLeftMotor(0);
+    	} else {
+    		Robot.collector.setLeftMotor(power);
+    	}
     }
 
-    // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
         return false;
     }
 
-    // Called once after isFinished returns true
     protected void end() {
-    }
-
-    // Called when another command which requires one or more of the same
-    // subsystems is scheduled to run
-    protected void interrupted() {
+    	Robot.collector.setPosition(true);
+    	Robot.collector.setMotors(0, 0);
     }
 }

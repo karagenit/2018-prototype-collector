@@ -23,13 +23,11 @@ public class OscillateCollector extends Command {
 		SmartDashboard.putBoolean("Oscillation Offset", false); //oscillate out-of-phase
 	}
 
-	// Called just before this Command runs the first time
 	protected void initialize() {
 		Robot.collector.configDefaults();
 		timer.start();
 	}
 
-	// Called repeatedly when this Command is scheduled to run
 	protected void execute() {
 		double power = SmartDashboard.getNumber("Collector Power", 1);
 		double time = SmartDashboard.getNumber("Oscillation Time", 100);

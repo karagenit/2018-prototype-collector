@@ -16,8 +16,11 @@ public class SimpleCollector extends Command {
     }
 
     protected void initialize() {
-    	double power = SmartDashboard.getNumber("Collector Power", 1);
     	Robot.collector.configDefaults();
+    }
+    
+    public void execute() {
+    	double power = SmartDashboard.getNumber("Collector Power", 1);
     	Robot.collector.setMotors(power, power);
     }
 

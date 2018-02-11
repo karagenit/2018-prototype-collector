@@ -17,9 +17,7 @@ public class PeakDisableCollector extends Command {
     }
 
     protected void initialize() {
-    	double power = SmartDashboard.getNumber("Collector Power", 1);
     	Robot.collector.configDefaults();
-    	Robot.collector.setMotors(power, power);
     }
 
     /**

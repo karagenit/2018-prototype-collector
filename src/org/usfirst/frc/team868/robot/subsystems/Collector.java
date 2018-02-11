@@ -1,5 +1,7 @@
 package org.usfirst.frc.team868.robot.subsystems;
 
+import org.usfirst.frc.team868.robot.commands.collector.SetCollector;
+
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
@@ -60,6 +62,8 @@ public class Collector extends Subsystem {
     	return motorLeft.getOutputCurrent();
     }
 
-    public void initDefaultCommand() {}
+    public void initDefaultCommand() {
+    	setDefaultCommand(new SetCollector(0));
+    }
 }
 

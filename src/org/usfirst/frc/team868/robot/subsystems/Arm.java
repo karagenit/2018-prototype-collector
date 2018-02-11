@@ -18,6 +18,12 @@ public class Arm extends Subsystem {
 		return actuator.get();
 	}
 
+	/**
+	 * No default command set here, because setting
+	 * the arms to a certain position would
+	 * interfere with commands like ToggleArms etc
+	 * (which finish right after setting the state).
+	 */
     public void initDefaultCommand() {}
 }
 

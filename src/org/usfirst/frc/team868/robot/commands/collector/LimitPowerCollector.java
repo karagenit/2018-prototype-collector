@@ -1,13 +1,13 @@
-package org.usfirst.frc.team868.robot.commands;
+package org.usfirst.frc.team868.robot.commands.collector;
 
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class SetArm extends Command {
+public class LimitPowerCollector extends Command {
 
-    public SetArm() {
+    public LimitPowerCollector() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }

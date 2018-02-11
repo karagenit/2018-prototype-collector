@@ -7,12 +7,12 @@
 
 package org.usfirst.frc.team868.robot;
 
-import org.usfirst.frc.team868.robot.commands.LimitPowerCollector;
-import org.usfirst.frc.team868.robot.commands.OscillateCollector;
-import org.usfirst.frc.team868.robot.commands.PeakDisableCollector;
-import org.usfirst.frc.team868.robot.commands.RangefinderTriggerArm;
-import org.usfirst.frc.team868.robot.commands.SimpleCollector;
-import org.usfirst.frc.team868.robot.commands.ToggleArm;
+import org.usfirst.frc.team868.robot.commands.arm.RangefinderTriggerArm;
+import org.usfirst.frc.team868.robot.commands.arm.ToggleArm;
+import org.usfirst.frc.team868.robot.commands.collector.LimitPowerCollector;
+import org.usfirst.frc.team868.robot.commands.collector.OscillateCollector;
+import org.usfirst.frc.team868.robot.commands.collector.PeakDisableCollector;
+import org.usfirst.frc.team868.robot.commands.collector.SimpleCollector;
 import org.usfirst.frc.team868.robot.subsystems.Arm;
 import org.usfirst.frc.team868.robot.subsystems.Collector;
 

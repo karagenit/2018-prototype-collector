@@ -17,6 +17,9 @@ public class ToggleArm extends Command {
     	Robot.arm.set(Robot.arm.get());
     }
 
+    /**
+     * TODO: never finish?
+     */
     protected boolean isFinished() {
         return true;
     }

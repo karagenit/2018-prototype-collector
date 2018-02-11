@@ -29,6 +29,9 @@ public class RangefinderTriggerArm extends Command {
     	}
     }
 
+    /**
+     * TODO: finish after we've triggered the rangefinder once?
+     */
     protected boolean isFinished() {
         return false;
     }

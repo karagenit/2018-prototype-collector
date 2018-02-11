@@ -17,14 +17,11 @@ public class SimpleCollector extends Command {
 
     protected void initialize() {
     	double power = SmartDashboard.getNumber("Collector Power", 1);
+    	Robot.collector.configDefaults();
     	Robot.collector.setMotors(power, power);
     }
 
     protected boolean isFinished() {
         return false;
-    }
-
-    protected void end() {
-    	Robot.collector.setMotors(0, 0);
     }
 }

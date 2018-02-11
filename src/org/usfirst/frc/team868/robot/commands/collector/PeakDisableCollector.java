@@ -48,8 +48,4 @@ public class PeakDisableCollector extends Command {
     protected boolean isFinished() {
         return false;
     }
-
-    protected void end() {
-    	Robot.collector.setMotors(0, 0);
-    }
 }

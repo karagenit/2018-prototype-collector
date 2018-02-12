@@ -16,16 +16,16 @@ public class RangefinderTriggerArm extends Command {
     }
 
     protected void initialize() {
-    	Robot.arm.set(true);
+    	Robot.arm.setPosition(true);
     }
 
     protected void execute() {
     	double threshold = SmartDashboard.getNumber("Rangefinder Threshold", 2);
     	
     	if (Robot.collector.getRangefinder() > threshold) {
-    		Robot.arm.set(false);
+    		Robot.arm.setPosition(false);
     	} else {
-    		Robot.arm.set(true);
+    		Robot.arm.setPosition(true);
     	}
     }
 

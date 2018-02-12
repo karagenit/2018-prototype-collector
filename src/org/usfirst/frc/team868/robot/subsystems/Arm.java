@@ -10,11 +10,11 @@ public class Arm extends Subsystem {
 	
 	private Solenoid actuator = new Solenoid(0);
 	
-	public void set(boolean open) {
+	public void setPosition(boolean open) {
 		actuator.set(open); // TODO: may need to invert this
 	}
 	
-	public boolean get() {
+	public boolean getPosition() {
 		return actuator.get();
 	}
 

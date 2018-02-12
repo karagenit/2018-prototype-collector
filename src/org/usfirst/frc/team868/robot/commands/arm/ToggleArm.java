@@ -14,7 +14,7 @@ public class ToggleArm extends Command {
     }
 
     protected void initialize() {
-    	Robot.arm.set(Robot.arm.get());
+    	Robot.arm.setPosition(Robot.arm.getPosition());
     }
 
     /**

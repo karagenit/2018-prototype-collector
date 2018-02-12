@@ -15,22 +15,22 @@ public class OI {
 	public static final XboxController driver = new XboxController(0);
 	
 	public static void setupDriver() {
-		Button a = new JoystickButton(driver, 0);
+		Button a = new JoystickButton(driver, 1);
 		a.toggleWhenPressed(new SimpleCollector());
 		
-		Button b = new JoystickButton(driver, 1);
+		Button b = new JoystickButton(driver, 2);
 		b.toggleWhenPressed(new OscillateCollector());
 		
-		Button x = new JoystickButton(driver, 2);
+		Button x = new JoystickButton(driver, 3);
 		x.toggleWhenPressed(new PeakDisableCollector());
 		
-		Button y = new JoystickButton(driver, 3);
+		Button y = new JoystickButton(driver, 4);
 		y.toggleWhenPressed(new LimitPowerCollector());
 		
-		Button start = new JoystickButton(driver, 5);
+		Button start = new JoystickButton(driver, 8);
 		start.whenPressed(new ToggleArm());
 		
-		Button select = new JoystickButton(driver, 6);
+		Button select = new JoystickButton(driver, 7);
 		select.toggleWhenPressed(new RangefinderTriggerArm());
 	}
 }

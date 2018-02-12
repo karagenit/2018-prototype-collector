@@ -28,11 +28,14 @@ public class Robot extends TimedRobot {
 	@Override
 	public void robotInit() {
 		SmartDashboard.putData("Toggle Arm Position", new ToggleArm());
-		SmartDashboard.putData("Simple Power", new SimpleCollector());
 		SmartDashboard.putData("Close via Rangefinder", new RangefinderTriggerArm());
+
+		SmartDashboard.putData("Simple Power", new SimpleCollector());
 		SmartDashboard.putData("Oscillating Power", new OscillateCollector());
 		SmartDashboard.putData("Disable on Stall", new PeakDisableCollector());
 		SmartDashboard.putData("Limit Current Draw", new LimitPowerCollector());
+		
+		OI.setupDriver(); // binds gamepad buttons to commands
 	}
 
 	@Override

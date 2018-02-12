@@ -8,7 +8,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Arm extends Subsystem {
 	
-	private Solenoid actuator = new Solenoid(0);
+	private Solenoid actuator = new Solenoid(2);
 	
 	public void setPosition(boolean open) {
 		actuator.set(open); // TODO: may need to invert this

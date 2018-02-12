@@ -66,6 +66,14 @@ public class Collector extends Subsystem {
     public double getLeftCurrent() {
     	return motorLeft.getOutputCurrent();
     }
+    
+    public double getRightVoltage() {
+    	return motorRight.getBusVoltage();
+    }
+    
+    public double getLeftVoltage() {
+    	return motorLeft.getBusVoltage();
+    }
 
     public void initDefaultCommand() {
     	setDefaultCommand(new SetCollector(0));

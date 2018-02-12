@@ -38,5 +38,9 @@ public class Robot extends TimedRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		SmartDashboard.putNumber("Right Current", collector.getRightCurrent());
+		SmartDashboard.putNumber("Right Voltage", collector.getRightVoltage());
+		SmartDashboard.putNumber("Left Current", collector.getLeftCurrent());
+		SmartDashboard.putNumber("Left Voltage", collector.getLeftVoltage());
 	}
 }

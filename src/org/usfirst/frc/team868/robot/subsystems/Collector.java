@@ -27,6 +27,8 @@ public class Collector extends Subsystem {
     	motorRight.setInverted(false);
     	motorLeft.configPeakCurrentLimit(0, 0); // Disables peak current limiting
     	motorRight.configPeakCurrentLimit(0, 0);
+    	motorLeft.configOpenloopRamp(0.5, 0); // Set power ramping - 0.5 seconds to full power
+    	motorRight.configOpenloopRamp(0.5, 0);
     }
     
     /**

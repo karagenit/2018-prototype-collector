@@ -3,6 +3,7 @@ package org.usfirst.frc.team868.robot.subsystems;
 import org.usfirst.frc.team868.robot.commands.collector.SetCollector;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
+import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
@@ -29,6 +30,8 @@ public class Collector extends Subsystem {
     	motorRight.configPeakCurrentLimit(0, 0);
     	motorLeft.configOpenloopRamp(0.5, 0); // Set power ramping - 0.5 seconds to full power
     	motorRight.configOpenloopRamp(0.5, 0);
+    	motorLeft.setNeutralMode(NeutralMode.Coast); // TODO: may want brake mode
+    	motorRight.setNeutralMode(NeutralMode.Coast);
     }
     
     /**

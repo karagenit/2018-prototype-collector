@@ -12,6 +12,7 @@ import org.usfirst.frc.team868.robot.commands.arm.ToggleArm;
 import org.usfirst.frc.team868.robot.commands.collector.LimitPowerCollector;
 import org.usfirst.frc.team868.robot.commands.collector.OscillateCollector;
 import org.usfirst.frc.team868.robot.commands.collector.PeakDisableCollector;
+import org.usfirst.frc.team868.robot.commands.collector.SetCollector;
 import org.usfirst.frc.team868.robot.commands.collector.SimpleCollector;
 import org.usfirst.frc.team868.robot.subsystems.Arm;
 import org.usfirst.frc.team868.robot.subsystems.Collector;
@@ -34,6 +35,8 @@ public class Robot extends TimedRobot {
 		SmartDashboard.putData("Oscillating Power", new OscillateCollector());
 		SmartDashboard.putData("Disable on Stall", new PeakDisableCollector());
 		SmartDashboard.putData("Limit Current Draw", new LimitPowerCollector());
+		
+		SmartDashboard.putData("Eject Cube", new SetCollector(-1));
 		
 		OI.setupDriver(); // binds gamepad buttons to commands
 	}

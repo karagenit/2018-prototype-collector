@@ -5,6 +5,7 @@ import org.usfirst.frc.team868.robot.commands.arm.ToggleArm;
 import org.usfirst.frc.team868.robot.commands.collector.LimitPowerCollector;
 import org.usfirst.frc.team868.robot.commands.collector.OscillateCollector;
 import org.usfirst.frc.team868.robot.commands.collector.PeakDisableCollector;
+import org.usfirst.frc.team868.robot.commands.collector.SetCollector;
 import org.usfirst.frc.team868.robot.commands.collector.SimpleCollector;
 
 import edu.wpi.first.wpilibj.XboxController;
@@ -26,6 +27,9 @@ public class OI {
 		
 		Button y = new JoystickButton(driver, 4);
 		y.toggleWhenPressed(new LimitPowerCollector());
+		
+		Button rb = new JoystickButton(driver, 5);
+		rb.toggleWhenPressed(new SetCollector(-1));
 		
 		Button start = new JoystickButton(driver, 8);
 		start.whenPressed(new ToggleArm());

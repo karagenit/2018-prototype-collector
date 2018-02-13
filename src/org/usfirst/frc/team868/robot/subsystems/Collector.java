@@ -71,11 +71,11 @@ public class Collector extends Subsystem {
     }
     
     public double getRightVoltage() {
-    	return motorRight.getBusVoltage();
+    	return motorRight.getMotorOutputVoltage();
     }
     
     public double getLeftVoltage() {
-    	return motorLeft.getBusVoltage();
+    	return motorLeft.getMotorOutputVoltage();
     }
 
     public void initDefaultCommand() {
